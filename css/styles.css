@@ -123,6 +123,33 @@ p.description {
   content: none;
 }
 
+.no-js #leadership-timeline > div {
+  background: #d8dee9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #4c566a;
+}
+
+.no-js #leadership-timeline > div h3 {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #2e3440;
+  display: inline-block;
+  margin: 0;
+}
+
+.no-js #leadership-timeline > div h4 {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: #3b4252;
+  margin: 0 0 15px 0;
+}
+
+.no-js #leadership-timeline:before,
+.no-js #leadership-timeline:after {
+  content: none;
+}
+
 @keyframes dropHeader {
   0% {
     transform: translateY(-100%);
@@ -217,6 +244,36 @@ p.description {
 }
 
 #education-timeline:after {
+  position: absolute;
+  content: "";
+  width: 3px;
+  height: 40px;
+  background: #5e81ac;
+  background: linear-gradient(to bottom, #5e81ac, rgba(94, 129, 172, 0));
+  top: 100%;
+  left: 303px;
+}
+
+#leadership-timeline {
+  margin: 30px auto 0 auto;
+  position: relative;
+  max-width: 1000px;
+}
+
+#leadership-timeline:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 303px;
+  right: auto;
+  height: 100%;
+  width: 3px;
+  background: #5e81ac;
+  z-index: 0;
+}
+
+#leadership-timeline:after {
   position: absolute;
   content: "";
   width: 3px;
