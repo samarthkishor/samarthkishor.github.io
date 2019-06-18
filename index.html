@@ -1,292 +1,460 @@
+
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Samarth Kishor</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-        <!-- <link rel="stylesheet" type="text/css" href="css/vertical-timeline.css"> -->
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-        <script src="//d3js.org/d3.v5.min.js" charset="utf-8"></script>
-        <script src="//unpkg.com/c3@0.7.0/c3.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <!-- Place favicon.ico in the root directory -->
 
-    </head>
-    <body>
-        <!--[if lt IE 8]>
+<html class="no-js"
+  lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="x-ua-compatible"
+    content="ie=edge">
+
+  <title>Samarth Kishor</title>
+  <meta name="description"
+    content>
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon"
+    href="/apple-touch-icon.png">
+
+  <!-- <link rel="stylesheet" type="text/css" href="css/vertical-timeline.css"> -->
+  <link href="css/styles.css"
+    rel="stylesheet">
+
+  <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous">
+
+  <script src="//d3js.org/d3.v5.min.js"
+    charset="utf-8" />
+
+  <script src="//unpkg.com/c3@0.7.0/c3.min.js" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" />
+
+  <script src="https://kit.fontawesome.com/52aaf66627.js" />
+
+  <!-- Place favicon.ico in the root directory -->
+</head>
+
+<body>
+  <!-- [if lt IE 8]>
             <p class="browserupgrade">
             You are using an <strong>outdated</strong> browser. Please
             <a href="http://browsehappy.com/">upgrade your browser</a> to improve
             your experience.
             </p>
-        <![endif]-->
+        <![endif] -->
 
-        <div id="section">
-            <img class="profile" src="img/profile.jpg" alt="Me">
-            <h1 class="name">Samarth Kishor</h1>
+  <div id="section">
+    <img class="profile"
+      src="img/profile.jpg"
+      alt="Me">
+
+    <h1 class="name">Samarth Kishor</h1>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="far fa-address-card" />
+
+    <h2 class="heading">About Me</h2>
+
+    <div class="about-description">
+
+      <p class="description">I'm a third-year undergraduate student at the University of Virginia studying Computer Science and Entrepreneurship. I love the creative and problem-solving aspects of software development and strive to write clean and performant code.
+      </p>
+
+      <p class="description">My interests within the field of software engineering include web application development, programming languages, data visualization, and functional programming. In my free time I enjoy running, playing the saxophone, and salsa dancing.
+      </p>
+    </div>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="fas fa-university" />
+
+    <h2 class="heading">Education</h2>
+
+    <div id="education-timeline">
+
+      <div data-date="September 2017 – May 2021">
+        <h3>University of Virginia</h3>
+        <h4>Bachelor of Arts in Computer Science
+          <br>
+          Technology Entrepreneurship Minor
+        </h4>
+
+        <ul>
+          <li>Cumulative GPA: 3.7</li>
+          <li>Relevant Coursework:</li>
+
+          <ul>
+            <li>Program and Data Representation (CS 2150)</li>
+            <li>Discrete Mathematics (CS 2102)</li>
+            <li>Theory of Computation (CS 3102)</li>
+            <li>Algorithms (CS 4102)</li>
+            <li>Data Visualization (SARC 5400)</li>
+            <li>Linear Algebra (MATH 3350)</li>
+          </ul>
+        </ul>
+      </div>
+
+      <div data-date="September 2013 – June 2017">
+        <h3>Maggie L. Walker Governor's School</h3>
+        <h4>Advanced Studies Diploma</h4>
+
+        <ul>
+          <li>Completed 142 hours of community service</li>
+          <li>Cross Country and Outdoor Track athlete</li>
+          <li>Member of four honor societies</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="fas fa-briefcase" />
+
+    <h2 class="heading">Experience</h2>
+
+    <div id="experience-timeline">
+
+      <div data-date="August 2018 – December 2018">
+        <h3>University of Virginia</h3>
+        <h4>Undergraduate Teaching Assistant for CS 2102 (Discrete Mathematics)
+        </h4>
+
+        <ul>
+          <li>Helped students improve their understanding of proof techniques and propositional logic in office hours
+          </li>
+          <li>Suggested improvements to the course which the professor implemented and graded assignments and exams
+          </li>
+        </ul>
+      </div>
+
+      <div data-date="June 2018 – August 2018">
+        <h3>Impact Makers Inc.</h3>
+        <h4>Junior Security Associate</h4>
+
+        <ul>
+          <li>Produced internal IT security documentation and policies for the company’s Microsoft Azure intranet
+          </li>
+          <li>Refactored an internal AWS web application written with the Express.js framework and set up an automated build and test pipeline that boosted developer productivity and improved code quality
+          </li>
+          <li>Implemented aesthetic and functional improvements to the company’s WordPress website
+          </li>
+        </ul>
+      </div>
+
+      <div data-date="June 2017 – August 2017">
+        <h3>Impact Makers Inc.</h3>
+        <h4>Software Engineering Intern</h4>
+
+        <ul>
+          <li>Worked with a small team in a fast-paced Agile environment</li>
+          <li>Set up an automated testing framework for a React web app in production using Nighmare.js, Mocha.js, and Gulp that increased the team’s productivity by enabling a continuous integration (CI) environment
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="fas fa-paper-plane" />
+
+    <h2 class="heading">Projects</h2>
+
+    <div class="project">
+
+      <div class="project-image">
+        <img src="img/hitchride.jpg">
+
+      </div>
+
+      <div class="project-info">
+        <h3>HitchRide</h3>
+        <h4>React, AWS, Flask (Python), PostgreSQL</h4>
+        <p>A ridesharing platform for college students</p>
+        <p>HitchRide is a web application that connects college students looking to share rides. My team of six built HitchRide during the Capital One Technology Summit hackathon in less than 24 hours. It uses React and Material UI on the front-end and Flask and PostgreSQL on the back-end. The application is hosted on an AWS EC2 instance with a RDS PostgreSQL database.
+        </p>
+        <a href="https://github.com/SamuelChan123/HitchRide/"
+          target="_blank">View project
+        </a>
+      </div>
+    </div>
+
+    <div class="project">
+
+      <div class="project-image">
+        <img src="img/scooters.jpg">
+
+      </div>
+
+      <div class="project-info">
+        <h3>Louisville Electric Scooters</h3>
+        <h4>Javascript, D3, Leaflet</h4>
+
+        <p>An interactive web application that visualizes electric scooters in Louisville, Kentucky.
+        </p>
+
+        <p>Users can view individual scooter trips by clicking on the markers on the map and use sliders to change the day of the week and the time of day, automatically updating the line graph that shows scooter trips over time on a given day. I built this application as a part of the final project for my Data Visualization class in Spring 2019.
+        </p>
+        <a href="https://github.com/samarthkishor/louisville-scooters"
+          target="_blank">View project
+        </a>
+      </div>
+    </div>
+
+    <div class="project">
+
+      <div class="project-image">
+        <img src="img/instaloud.jpg">
+
+      </div>
+
+      <div class="project-info">
+        <h3>Instaloud</h3>
+        <h4>Hy, Python, Google Cloud</h4>
+        <p>A program that converts your Instapaper bookmaks into audio files.
+        </p>
+        <p>Instaloud is a small program written entirely in the Hy Programming Language (a Lisp dialect embedded in Python). It downloads your saved bookmarks from Instapaper and converts them into mp3 files using Google’s Text-to-Speech API.
+        </p>
+        <a href="https://github.com/samarthkishor/Instaloud"
+          target="_blank">View project
+        </a>
+      </div>
+    </div>
+
+    <div class="project">
+
+      <div class="project-image">
+        <img src="img/tritag.jpg">
+
+      </div>
+
+      <div class="project-info">
+        <h3>TriTag</h3>
+        <h4>React Native, Firebase, Arduino</h4>
+        <p>A modern, digital approach to Triage. My group won a Top Ten in Category award out of hundreds of participandts at MedHacks 2018
+        </p>
+        <p>TriTag is an efficient patient marker and tracking system for patients in Emergency and Mass Casualty events. It consists of three steps: 1) Initial assessment and assignment of severity and hash code, 2) HIPAA - compliant cloud database of important medical data for remote retrieval, and 3) ambulatory tracking of patients through cloud database.
+        </p>
+        <a href="https://devpost.com/software/tritag"
+          target="_blank">View project
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="fas fa-code" />
+
+    <h2 class="heading">Skills</h2>
+
+    <div class="charts">
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fab fa-python lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">Python</span>
+        </div>
+        <div id="python" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fab fa-js-square lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">Javascript</span>
+        </div>
+        <div id="js" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fab fa-java lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">Java</span>
+        </div>
+        <div id="java" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fas fa-file-code lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">C++</span>
+        </div>
+        <div id="cpp" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fab fa-react lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">React</span>
+        </div>
+        <div id="react" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fab fa-html5 lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">HTML/CSS</span>
+        </div>
+        <div id="html" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fas fa-terminal lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">Shell Scripting</span>
+        </div>
+        <div id="shell" />
+
+      </div>
+
+      <div class="chart-container">
+
+        <div class="icon-container">
+          <i class="fas fa-edit lang-icon"
+            id="lang-icon" />
+
+          <span class="icon-text">Emacs Lisp</span>
+        </div>
+        <div id="elisp" />
+
+      </div>
+    </div>
+  </div>
+
+  <div id="section">
+    <i id="head-icon"
+      class="far fa-clipboard" />
+
+    <h2 class="heading">Leadership</h2>
+
+    <div id="leadership-timeline">
+
+      <div data-date="Fall 2018 – Current">
+        <h3>HooHacks</h3>
+        <h4>Events Committee Co-Chair</h4>
+
+        <ul>
+          <li>Part of the team that organizes UVA's annual hackathon with over 600 participants
+          </li>
+          <li>Worked in the Hacker Experience Committee to organize registration, food, and workshops for HooHacks 2019
+          </li>
+          <li>Served as a point of contact for judges and coordinated the Virtual Reality and Salsa workshops
+          </li>
+        </ul>
+      </div>
+
+      <div data-date="Fall 2017 – Current">
+        <h3>University Salsa Club</h3>
+        <h4 />
+
+
+        <ul>
+          <li>Choreographed a Rueda dance for the Fall 2018 Salsa Showcase</li>
+          <li>Performed in the Fall 2017, Fall 2018, and Spring 2019 Salsa Showcase
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+
+    <div class="page-footer">
+
+      <div class="row">
+
+        <div class="copyright">
+
+          <p>Copyright © 2019 Samarth Kishor
+          </p>
         </div>
 
-        <div id="section">
-            <i id="head-icon" class="far fa-address-card"></i>
-            <h2 class="heading">About Me</h2>
-            <div class="about-description">
-                <p class="description">
-                    I'm a third-year undergraduate student at the University of Virginia studying Computer Science and Entrepreneurship. I love the creative and problem-solving aspects of software development and strive to write clean and performant code.
-                </p>
-                <p class="description">
-                    My interests within the field of software engineering include web application development, programming languages, data visualization, and functional programming. In my free time I enjoy running, playing the saxophone, and salsa dancing.
-                </p>
-            </div>
+        <div class="social">
+
+          <ul class="social-row">
+
+            <li>
+
+              <a class="social-icon"
+                href="https://linkedin.com/in/samarth-kishor"
+                target="_blank">
+                <i class="fab fa-linkedin"
+                  title="LinkedIn" />
+
+              </a>
+            </li>
+
+            <li>
+
+              <a class="social-icon"
+                href="https://github.com/samarthkishor"
+                target="_blank">
+                <i class="fab fa-github"
+                  title="Github" />
+
+              </a>
+            </li>
+
+            <li>
+
+              <a class="social-icon"
+                href="https://stackoverflow.com/users/7432268/samarth?tab=profile"
+                target="_blank">
+                <i class="fab fa-stack-overflow"
+                  title="Stack Overflow" />
+
+              </a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/scripts.js" />
 
-        <div id="section">
-            <i id="head-icon" class="fas fa-university"></i>
-            <h2 class="heading">Education</h2>
+  <script src="js/charts.js" />
 
-            <div id="education-timeline">
-                <div data-date="September 2017 &ndash; May 2021">
-                    <h3>University of Virginia</h3>
-                    <h4>Bachelor of Arts in Computer Science <br/> Technology Entrepreneurship Minor</h4>
-                    <ul>
-                        <li>Cumulative GPA: 3.7</li>
-                        <li>Relevant Coursework:</li>
-                        <ul>
-                            <li>Program and Data Representation (CS 2150)</li>
-                            <li>Discrete Mathematics (CS 2102)</li>
-                            <li>Theory of Computation (CS 3102)</li>
-                            <li>Algorithms (CS 4102)</li>
-                            <li>Data Visualization (SARC 5400)</li>
-                            <li>Linear Algebra (MATH 3350)</li>
-                        </ul>
-                    </ul>
-                </div>
+  <script src="js/vertical-timeline.min.js" />
 
-                <div data-date="September 2013 &ndash; June 2017">
-                    <h3>Maggie L. Walker Governor's School</h3>
-                    <h4>Advanced Studies Diploma</h4>
-                    <ul>
-                        <li>Completed 142 hours of community service</li>
-                        <li>Cross Country and Outdoor Track athlete</li>
-                        <li>Member of four honor societies</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="section">
-            <i id="head-icon" class="fas fa-briefcase"></i>
-            <h2 class="heading">Experience</h2>
-            <div id="experience-timeline">
-                <div data-date="August 2018 &ndash; December 2018">
-                    <h3>University of Virginia</h3>
-                    <h4>Undergraduate Teaching Assistant for CS 2102 (Discrete Mathematics)</h4>
-                    <ul>
-                        <li>Helped students improve their understanding of proof techniques and propositional logic in office hours</li>
-                        <li>Suggested improvements to the course which the professor implemented and graded assignments and exams</li>
-                    </ul>
-                </div>
-
-                <div data-date="June 2018 &ndash; August 2018">
-                    <h3>Impact Makers Inc.</h3>
-                    <h4>Junior Security Associate</h4>
-                    <ul>
-                        <li>Produced internal IT security documentation and policies for the company’s Microsoft Azure intranet</li>
-                        <li>Refactored an internal AWS web application written with the Express.js framework and set up an automated build and test pipeline that boosted developer productivity and improved code quality</li>
-                        <li>Implemented aesthetic and functional improvements to the company’s WordPress website</li>
-                    </ul>
-                </div>
-
-                <div data-date="June 2017 &ndash; August 2017">
-                    <h3>Impact Makers Inc.</h3>
-                    <h4>Software Engineering Intern</h4>
-                    <ul>
-                        <li>Worked with a small team in a fast-paced Agile environment</li>
-                        <li>Set up an automated testing framework for a React web app in production using Nighmare.js, Mocha.js, and Gulp that increased the team’s productivity by enabling a continuous integration (CI) environment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div id="section">
-            <i id="head-icon" class="fas fa-paper-plane"></i>
-            <h2 class="heading">Projects</h2>
-            <div class="project">
-                <div class="project-image">
-                    <img src="img/hitchride.jpg">
-                </div>
-                <div class="project-info">
-                    <h3>HitchRide</h3>
-                    <h4>React, AWS, Flask (Python), PostgreSQL</h4>
-                    <p>A ridesharing platform for college students</p>
-                    <p>HitchRide is a web application that connects college students looking to share rides. My team of six built HitchRide during the Capital One Technology Summit hackathon in less than 24 hours. It uses React and Material UI on the front-end and Flask and PostgreSQL on the back-end. The application is hosted on an AWS EC2 instance with a RDS PostgreSQL database.</p>
-                    <a href="https://github.com/SamuelChan123/HitchRide/" target="_blank">View project</a>
-                </div>
-            </div>
-            <div class="project">
-                <div class="project-image">
-                    <img src="img/scooters.jpg">
-                </div>
-                <div class="project-info">
-                    <h3>Louisville Electric Scooters</h3>
-                    <h4>Javascript, D3, Leaflet</h4>
-                    <p>
-                        An interactive web application that visualizes electric scooters in Louisville, Kentucky.
-                    </p>
-                    <p>
-                        Users can view individual scooter trips by clicking on the markers on the map and use sliders to change the day of the week and the time of day, automatically updating the line graph that shows scooter trips over time on a given day. I built this application as a part of the final project for my Data Visualization class in Spring 2019.
-                    </p>
-                    <a href="https://github.com/samarthkishor/louisville-scooters" target="_blank">View project</a>
-                </div>
-            </div>
-            <div class="project">
-                <div class="project-image">
-                    <img src="img/instaloud.jpg">
-                </div>
-                <div class="project-info">
-                    <h3>Instaloud</h3>
-                    <h4>Hy, Python, Google Cloud</h4>
-                    <p>A program that converts your Instapaper bookmaks into audio files.</p>
-                    <p>Instaloud is a small program written entirely in the Hy Programming Language (a Lisp dialect embedded in Python). It downloads your saved bookmarks from Instapaper and converts them into mp3 files using Google’s Text-to-Speech API.</p>
-                    <a href="https://github.com/samarthkishor/Instaloud" target="_blank">View project</a>
-                </div>
-            </div><div class="project">
-                <div class="project-image">
-                    <img src="img/tritag.jpg">
-                </div>
-                <div class="project-info">
-                    <h3>TriTag</h3>
-                    <h4>React Native, Firebase, Arduino</h4>
-                    <p>A modern, digital approach to Triage. My group won a Top Ten in Category award out of hundreds of participandts at MedHacks 2018</p>
-                    <p>TriTag is an efficient patient marker and tracking system for patients in Emergency and Mass Casualty events. It consists of three steps: 1) Initial assessment and assignment of severity and hash code, 2) HIPAA - compliant cloud database of important medical data for remote retrieval, and 3) ambulatory tracking of patients through cloud database.</p>
-                    <a href="https://devpost.com/software/tritag" target="_blank">View project</a>
-                </div>
-            </div>
-        </div>
-
-        <div id="section">
-            <i id="head-icon" class="fas fa-code"></i>
-            <h2 class="heading">Skills</h2>
-            <div class="charts">
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-python lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Python</span>
-                    </div>
-                    <div id="python"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-js-square lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Javascript</span>
-                    </div>
-                    <div id="js"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-java lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Java</span>
-                    </div>
-                    <div id="java"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-file-code lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">C++</span>
-                    </div>
-                    <div id="cpp"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-react lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">React</span>
-                    </div>
-                    <div id="react"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-html5 lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">HTML/CSS</span>
-                    </div>
-                    <div id="html"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-terminal lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Shell Scripting</span>
-                    </div>
-                    <div id="shell"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-edit lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Emacs Lisp</span>
-                    </div>
-                    <div id="elisp"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="section">
-            <i id="head-icon" class="far fa-clipboard"></i>
-            <h2 class="heading">Leadership</h2>
-
-            <div id="leadership-timeline">
-                <div data-date="Fall 2018 &ndash; Current">
-                    <h3>HooHacks</h3>
-                    <h4>Events Committee Co-Chair</h4>
-                    <ul>
-                        <li>Part of the team that organizes UVA's annual hackathon with over 600 participants</li>
-                        <li>Worked in the Hacker Experience Committee to organize registration, food, and workshops for HooHacks 2019</li>
-                        <li>Served as a point of contact for judges and coordinated the Virtual Reality and Salsa workshops</li>
-                    </ul>
-                </div>
-
-                <div data-date="Fall 2017 &ndash; Current">
-                    <h3>University Salsa Club</h3>
-                    <h4></h4>
-                    <ul>
-                        <li>Choreographed a Rueda dance for the Fall 2018 Salsa Showcase</li>
-                        <li>Performed in the Fall 2017, Fall 2018, and Spring 2019 Salsa Showcase</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <div class="page-footer">
-                <div class="row">
-                    <div class="copyright">
-                        <p>
-                            Copyright &copy; 2019 Samarth Kishor
-                        </p>
-                    </div>
-                    <div class="social">
-                        <ul class="social-row">
-                            <li>
-                                <a class="social-icon" href="https://linkedin.com/in/samarth-kishor" target="_blank">
-                                    <i class="fab fa-linkedin" title="LinkedIn"></i></a>
-                            </li>
-                            <li>
-                                <a class="social-icon" href="https://github.com/samarthkishor" target="_blank">
-                                    <i class="fab fa-github" title="Github"></i></a>
-                            </li>
-                            <li>
-                                <a class="social-icon" href="https://stackoverflow.com/users/7432268/samarth?tab=profile" target="_blank">
-                                    <i class="fab fa-stack-overflow" title="Stack Overflow"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script src="js/scripts.js"></script>
-        <script src="js/charts.js"></script>
-        <script src="js/vertical-timeline.min.js"></script>
-    </body>   
+</body>
 </html>
