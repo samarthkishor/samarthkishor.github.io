@@ -528,6 +528,10 @@ a.social-icon:focus {
   #education-timeline:after {
     left: 23px;
   }
+  #leadership-timeline:before,
+  #leadership-timeline:after {
+    left: 23px;
+  }
 
   .vtimeline-date {
     width: auto;
