@@ -39,7 +39,7 @@
                     I'm a third-year undergraduate student at the University of Virginia studying Computer Science and Entrepreneurship. I love the creative and problem-solving aspects of software development and strive to write clean and performant code.
                 </p>
                 <p class="description">
-                    My interests within the field of software engineering include web application development, programming languages, data visualization, and functional programming. In my free time I enjoy running, playing the saxophone, and salsa dancing.
+                    My interests within the field of software engineering include web application development, programming languages, data visualization, and functional programming.
                 </p>
             </div>
         </div>
@@ -129,18 +129,6 @@
             <h2 class="heading">Projects</h2>
             <div class="project">
                 <div class="project-image">
-                    <img src="img/hitchride.jpg">
-                </div>
-                <div class="project-info">
-                    <h3>HitchRide</h3>
-                    <h4>React, AWS, Flask (Python), PostgreSQL</h4>
-                    <p>A ridesharing platform for college students</p>
-                    <p>HitchRide is a web application that connects college students looking to share rides. My team of six built HitchRide during the Capital One Technology Summit hackathon in less than 24 hours. It uses React and Material UI on the front-end and Flask and PostgreSQL on the back-end. The application is hosted on an AWS EC2 instance with a RDS PostgreSQL database.</p>
-                    <a href="https://github.com/SamuelChan123/HitchRide/" target="_blank">View project</a>
-                </div>
-            </div>
-            <div class="project">
-                <div class="project-image">
                     <img src="img/scooters.jpg">
                 </div>
                 <div class="project-info">
@@ -183,63 +171,75 @@
         <div id="section">
             <i id="head-icon" class="fas fa-code"></i>
             <h2 class="heading">Skills</h2>
-            <div class="charts">
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-python lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Python</span>
-                    </div>
-                    <div id="python"></div>
+
+            <div class="skills">
+              <div class="skill">
+                <div class="lang-container">
+                  <i class="fab fa-python lang-icon" id="lang-icon"></i>
+                  <div class="lang-header">
+                    <h3>Python</h3>
+                    <h4>Level: Proficient</h4>
+                  </div>
                 </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-js-square lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Javascript</span>
-                    </div>
-                    <div id="js"></div>
+                <p>Python is the programming language I'm most comfortable with and I use it extensively. Its library ecosystem is great and I like the addition of optional static type hints in Python 3. Whenever I need to write a small script or program, it's usually in Python.</p>
+                <p>I've used Python in:</p>
+                <ul>
+                  <li>Production codebases</li>
+                  <li>Most coding interviews</li>
+                  <li>Leetcode and CTCI problems</li>
+                </ul>
+              </div>
+
+              <div class="skill">
+                <div class="lang-container">
+                  <i class="fab fa-js-square lang-icon" id="lang-icon"></i>
+                  <div class="lang-header">
+                    <h3>Javascript</h3>
+                    <h4>Level: Proficient</h4>
+                  </div>
                 </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-java lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Java</span>
-                    </div>
-                    <div id="java"></div>
+                <p>Javascript is the second programming language I learned. Its syntax isn't the nicest but it's familiar and I love how easy it is to do functional programming, especially with ES6. React is my favorite front-end framework and it makes web development so much easier to reason about.</p>
+                <p>I've used Javascript in:</p>
+                <ul>
+                  <li>Production codebases (React and Express.js)</li>
+                  <li>This website</li>
+                  <li>React web apps</li>
+                  <li><a href="https://github.com/samarthkishor/louisville-scooters">My Data Visualization class final project</a></li>
+                  <li><a href="https://devpost.com/software/tritag">My team's project for MedHacks 2018</a></li>
+                </ul>
+              </div>
+
+              <div class="skill">
+                <div class="lang-container">
+                  <i class="fab fa-java lang-icon" id="lang-icon"></i>
+                  <div class="lang-header">
+                    <h3>Java</h3>
+                    <h4>Level: Proficient</h4>
+                  </div>
                 </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-file-code lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">C++</span>
-                    </div>
-                    <div id="cpp"></div>
+                <p>Java is one of those languages I have to deal with because it's everywhere. The JVM is great technology but I'm personally not a fan of the language itself. I've written enough Java code where I can use it pretty comfortably&mdash;its standard library of data structures is useful and sometimes I'll reach for Java over Python in interviews because of this.</p>
+                <p>I've used Java in:</p>
+                <ul>
+                  <li>Code for my OOP and Algorithms classes</li>
+                  <li>Some coding interviews</li>
+                </ul>
+              </div>
+
+              <div class="skill">
+                <div class="lang-container">
+                  <i class="fas fa-file-code lang-icon" id="lang-icon"></i>
+                  <div class="lang-header">
+                    <h3>OCaml</h3>
+                    <h4>Level: Familiar</h4>
+                  </div>
                 </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-react lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">React</span>
-                    </div>
-                    <div id="react"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fab fa-html5 lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">HTML/CSS</span>
-                    </div>
-                    <div id="html"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-terminal lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Shell Scripting</span>
-                    </div>
-                    <div id="shell"></div>
-                </div>
-                <div class="chart-container">
-                    <div class="icon-container">
-                        <i class="fas fa-edit lang-icon" id="lang-icon"></i>
-                        <span class="icon-text">Emacs Lisp</span>
-                    </div>
-                    <div id="elisp"></div>
-                </div>
+                <p>OCaml is one of my favorite languages right now. I learned a bit of Standard ML in my Progamming Languages course and figured OCaml would be worth learning since it's used in industry. The combination of strong static typing and type inference makes it possible to write code that is terse, expressive, and safe. Its integration with Emacs is also pretty impressive.</p>
+                <p>I've used OCaml in:</p>
+                <ul>
+                  <li><a href="https://github.com/samarthkishor/advent-of-code-2019">Advent of Code 2019</a></li>
+                  <li><a href="https://github.com/samarthkishor/crafting-interpreters">Crafting Interpreters</a></li>
+                </ul>
+              </div>
             </div>
         </div>
 
@@ -300,5 +300,5 @@
         <script src="js/scripts.js"></script>
         <script src="js/charts.js"></script>
         <script src="js/vertical-timeline.min.js"></script>
-    </body>   
+    </body>
 </html>
