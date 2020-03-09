@@ -4,6 +4,8 @@ body {
   padding: 0 0.62em;
   font: 1.2em/1.62 sans-serif;
   text-align: justify;
+  background-color: #eceff4;
+  color: #2e3440;
 }
 h1,
 h2,
@@ -14,4 +16,33 @@ h3 {
   body {
     max-width: none;
   }
+}
+
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header li {
+  display: inline;
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+header li a {
+  font-weight: 300;
+  font-size: 1.5em;
+  color: #434c5e;
+  text-decoration: none;
+}
+
+pre.src {
+  background: #3b4252;
+  color: #dcdccc;
+  padding: 10px;
 }
