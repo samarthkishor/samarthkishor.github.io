@@ -13,7 +13,7 @@ body {
   /* font-family: Verdana, Geneva, sans-serif; */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
-  background-color: #3b4252;
+  background-color: #eceff4;
 }
 
 body.active {
@@ -32,7 +32,7 @@ body.active {
 h1.name {
   font-size: 3em;
   font-weight: 300;
-  color: #d8dee9;
+  color: #434c5e;
   text-align: center;
   position: relative;
 }
@@ -58,7 +58,7 @@ i#head-icon {
   font-weight: 900;
   font-size: 2em;
   margin: 0 0 10px 0;
-  color: #d8dee9;
+  color: #434c5e;
   text-align: center;
   position: relative;
 }
@@ -67,7 +67,7 @@ h2.heading {
   font-size: 2em;
   font-weight: 300;
   margin: 0 0 30px 0;
-  color: #d8dee9;
+  color: #434c5e;
   text-align: center;
   position: relative;
 }
@@ -352,8 +352,8 @@ p.description {
   top: 10px;
   font-weight: 300;
   font-size: 0.9em;
-  color: #d8dee9;
-  background: #4c566a;
+  background: #d8dee9;
+  color: #4c566a;
   padding: 10px;
   border-radius: 3px;
 }
