@@ -13,14 +13,22 @@ Here's the idea: is it possible to hack processes on my Linux VM from Emacs on
 my Mac? I found out that it's not only possible, but it's actually surprisingly
 easy.
 
+* Configuring the Virtual Machine
+:PROPERTIES:
+:HEADER-ARGS:sh: :dir /ssh:debian-box:/home/samarth/cl-ptrace
+:END:
+
 First you'll need to set up a Bridged Adapter on your VirtualBox VM to allow
 your host machine to connect to it via SSH. [[https://www.youtube.com/watch?v=ErzhbUusgdI][This YouTube tutorial]] was pretty
 helpful. You'll just have to change how you enable the SSH service on your Linux
 VM---I'm on Debian so I had to run the command
 
-#+BEGIN_SRC sh
-systemctl status ssh
+#+BEGIN_SRC sh :exports both
+systemctl status ssh | cat | grep active
 #+END_SRC
+
+#+RESULTS:
+: Active: active (running) since Fri 2020-03-13 18:24:14 EDT; 33s ago
 
 to see if SSH was enabled.
 
@@ -77,8 +85,11 @@ Now fire up a new terminal and get your VM's ip address. On Debian, the command
 is
 
 #+BEGIN_SRC sh
-ip a
+hostname -I
 #+END_SRC
+
+#+RESULTS:
+: 192.168.1.4
 
 After that, SSH into your VM from your /host/ machine to create an SSH tunnel
 that we'll take advantage of later.
@@ -109,30 +120,49 @@ gcc spam.c -o spam
 We want to get the process id (=pid=) of this =spam= program so we can interact
 with it. To do this, run the command
 
-#+BEGIN_SRC sh
+#+NAME: spam-pid
+#+BEGIN_SRC sh :exports both
 ps -a | grep spam | awk '{ print $1 }'
 #+END_SRC
 
-We can then display information about the process with =top=.
+#+RESULTS: spam-pid
+: 1543
 
-#+BEGIN_SRC sh
-top -p <pid>
+We can then display information about the process with =top=. You can get a
+nicer output by using the =htop= program.
+
+#+BEGIN_SRC sh :var PID=spam-pid
+top -p $PID
 #+END_SRC
 
+We can even limit the output of =top= to just get the CPU usage. The =sed=
+commands are just for making the output nicer.
+
+#+BEGIN_SRC sh :var PID=spam-pid :exports both
+top -p $PID -n 2 -b | grep Cpu | sed 's/\:/\: /' | sed 's/us,.*/ /'
+#+END_SRC
+
+#+RESULTS:
+| %Cpu(s): |  53.6 |
+| %Cpu(s): | 100.0 |
+
 Notice that the =spam= program is taking up over 90% of the CPU since it's an
-infinite =while= loop in a single-threaded process. You can get a nicer output
-by using the =htop= program.
+infinite =while= loop in a single-threaded process.
+
+* Hacking in Emacs
 
 Next, switch back to Emacs (on the host machine) and make sure you're in the
-=cl-ptrace= repo. We want to connect to the remote Lisp server from Emacs, so
-run the command =M-x sly-connect= keep the default host as =localhost= and
-change the port to the =slynk= server port. Now you have a local Lisp REPL that
-is connected to your VM via the SSH tunnel we created earlier. Load the file
-=cl-ptrace.asd= with the command =M-x sly-load-file=. The file is on the remote
-VM, but this isn't a problem because TRAMP should be configured to handle the
-remote filenames (we did this earlier). This should load the file into the =sly=
-REPL. Then run =(asdf:load-system "cl-ptrace")= to load the =cl-ptrace= library
-into the REPL, and run =(in-package :cl-ptrace)= to start using the library.
+remote =cl-ptrace= repo via TRAMP. We want to connect to the remote Lisp server
+from Emacs, so run the command =M-x sly-connect=, keep the default host as
+=localhost=, and change the port to the =slynk= server port.
+
+Now you have a local Lisp REPL that is connected to your VM via the SSH tunnel
+we created earlier. Load the file =cl-ptrace.asd= with the command =M-x
+sly-load-file=. The file is on the remote VM, but this isn't a problem because
+TRAMP should be configured to handle the remote filenames (we did this earlier).
+This should load the file into the =sly= REPL. Then run =(asdf:load-system
+"cl-ptrace")= to load the =cl-ptrace= library into the REPL, and run
+=(in-package :cl-ptrace)= to start using the library.
 
 Make sure that you're root by running the function =(am-i-root?)=. It should
 return =T=. Now you've successfully created a mechanism to hack remote processes

@@ -669,74 +669,86 @@ FizzBuzz
     <p>Here’s the idea: is it possible to hack processes on my
     Linux VM from Emacs on my Mac? I found out that it’s not only
     possible, but it’s actually surprisingly easy.</p>
-    <p>First you’ll need to set up a Bridged Adapter on your
-    VirtualBox VM to allow your host machine to connect to it via
-    SSH. <a href="https://www.youtube.com/watch?v=ErzhbUusgdI">This
-    YouTube tutorial</a> was pretty helpful. You’ll just have to
-    change how you enable the SSH service on your Linux VM—I’m on
-    Debian so I had to run the command</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">systemctl status ssh
+    <div id="outline-container-org5d0097d" class="outline-2">
+      <h2 id="org5d0097d">Configuring the Virtual Machine</h2>
+      <div class="outline-text-2" id="text-org5d0097d">
+        <p>First you’ll need to set up a Bridged Adapter on your
+        VirtualBox VM to allow your host machine to connect to it
+        via SSH. <a href=
+        "https://www.youtube.com/watch?v=ErzhbUusgdI">This YouTube
+        tutorial</a> was pretty helpful. You’ll just have to change
+        how you enable the SSH service on your Linux VM—I’m on
+        Debian so I had to run the command</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">
+          systemctl status ssh | <span style=
+"color: #ECCC87;">cat</span> | <span style=
+"color: #ECCC87;">grep</span> active
 </pre>
-    </div>
-    <p>to see if SSH was enabled.</p>
-    <p>To attach and manipulate this process, we need to use the
-    <code>ptrace</code> function. You can see the documentation for
-    it with the command <code>man 2 ptrace</code> (2 stands for the
-    second section of the manual, since we want the C system call
-    function for <code>ptrace</code> instead of the general UNIX
-    command). We could use C for process hacking, but it’s a lot
-    nicer to use an interactive language like Lisp. Plus, it’s
-    possible to interact with a remote Lisp REPL from your host
-    machine’s local Emacs instance through SSH. Common Lisp is
-    pretty amazing—I don’t know if many other programming languages
-    have these features.</p>
-    <p>Clone <a href="https://github.com/k-stz/cl-ptrace">Keist’s
-    GitHub repo</a> to your VM to get his Common Lisp library for
-    process hacking with <code>ptrace</code>. The code here is
-    essentially the same as the tutorial, except you might have to
-    remove the line that says</p>
-    <div class="org-src-container">
-      <pre class="src src-common-lisp"><span style=
-      "color: #80A0C2;">(</span><span style=
-      "color: #8EBCBB;">:file</span> <span style=
-      "color: #A2BF8A;">"cl-ptrace/async-functions"</span><span style=
-      "color: #80A0C2;">)</span>
+        </div>
+        <pre class="example">
+Active: active (running) since Fri 2020-03-13 18:24:14 EDT; 9min ago
 </pre>
-    </div>
-    <p>since that file doesn’t exist in the repo for some reason.
-    Install your Common Lisp implementation of choice (I use
-    <code>sbcl</code> since it’s well-supported on most platforms)
-    and follow the instructions on the <a href=
-    "https://www.quicklisp.org/beta/">Quicklisp website</a> to
-    install Quicklisp. Quicklisp is the unofficial package manager
-    for Common Lisp.</p>
-    <p>Once you’ve successfully installed Quicklisp, you need to
-    set up a Lisp REPL on the remote VM so it can talk to your
-    local Emacs editor. Quit out of your <code>sbcl</code> repl and
-    run it as root. We need Lisp to run as root since the
-    <code>ptrace</code> system calls need root access.</p>
-    <div class="org-src-container">
-      <pre class="src src-sh"><span style=
-      "color: #ECCC87;">sudo</span> sbcl
+        <p>to see if SSH was enabled.</p>
+        <p>To attach and manipulate this process, we need to use
+        the <code>ptrace</code> function. You can see the
+        documentation for it with the command <code>man 2
+        ptrace</code> (2 stands for the second section of the
+        manual, since we want the C system call function for
+        <code>ptrace</code> instead of the general UNIX command).
+        We could use C for process hacking, but it’s a lot nicer to
+        use an interactive language like Lisp. Plus, it’s possible
+        to interact with a remote Lisp REPL from your host
+        machine’s local Emacs instance through SSH. Common Lisp is
+        pretty amazing—I don’t know if many other programming
+        languages have these features.</p>
+        <p>Clone <a href=
+        "https://github.com/k-stz/cl-ptrace">Keist’s GitHub
+        repo</a> to your VM to get his Common Lisp library for
+        process hacking with <code>ptrace</code>. The code here is
+        essentially the same as the tutorial, except you might have
+        to remove the line that says</p>
+        <div class="org-src-container">
+          <pre class="src src-common-lisp"><span style=
+          "color: #80A0C2;">(</span><span style=
+          "color: #8EBCBB;">:file</span> <span style=
+          "color: #A2BF8A;">"cl-ptrace/async-functions"</span><span style=
+          "color: #80A0C2;">)</span>
 </pre>
-    </div>
-    <p>In his tutorial, Kaiste avoided this problem by running
-    Emacs as root since he was hacking processes from the same
-    machine. However, we don’t want to do this since running Emacs
-    as root can be dangerous, plus we are trying to hack processes
-    on our <i>remote</i> machine from our <i>local (host)</i> Emacs
-    editor, so running Emacs locally as root wouldn’t really be
-    useful.</p>
-    <p>Use Quicklisp to load/install <code>ASDF</code> and
-    <code>slynk</code>, and then create a <code>slynk</code> server
-    on port 4006. You can use the default port 4005 if it’s
-    open.</p>
-    <div class="org-src-container">
-      <pre class="src src-common-lisp"><span style=
-      "color: #80A0C2;">(</span>ql:quickload <span style=
-      "color: #8EBCBB;">:asdf</span><span style=
-      "color: #80A0C2;">)</span>
+        </div>
+        <p>since that file doesn’t exist in the repo for some
+        reason. Install your Common Lisp implementation of choice
+        (I use <code>sbcl</code> since it’s well-supported on most
+        platforms) and follow the instructions on the <a href=
+        "https://www.quicklisp.org/beta/">Quicklisp website</a> to
+        install Quicklisp. Quicklisp is the unofficial package
+        manager for Common Lisp.</p>
+        <p>Once you’ve successfully installed Quicklisp, you need
+        to set up a Lisp REPL on the remote VM so it can talk to
+        your local Emacs editor. Quit out of your <code>sbcl</code>
+        repl and run it as root. We need Lisp to run as root since
+        the <code>ptrace</code> system calls need root access.</p>
+        <div class="org-src-container">
+          <pre class="src src-sh"><span style=
+          "color: #ECCC87;">sudo</span> sbcl
+</pre>
+        </div>
+        <p>In his tutorial, Kaiste avoided this problem by running
+        Emacs as root since he was hacking processes from the same
+        machine. However, we don’t want to do this since running
+        Emacs as root can be dangerous, plus we are trying to hack
+        processes on our <i>remote</i> machine from our <i>local
+        (host)</i> Emacs editor, so running Emacs locally as root
+        wouldn’t really be useful.</p>
+        <p>Use Quicklisp to load/install <code>ASDF</code> and
+        <code>slynk</code>, and then create a <code>slynk</code>
+        server on port 4006. You can use the default port 4005 if
+        it’s open.</p>
+        <div class="org-src-container">
+          <pre class="src src-common-lisp"><span style=
+          "color: #80A0C2;">(</span>ql:quickload <span style=
+          "color: #8EBCBB;">:asdf</span><span style=
+          "color: #80A0C2;">)</span>
 <span style="color: #80A0C2;">(</span>ql:quickload <span style=
 "color: #8EBCBB;">:slynk</span><span style=
 "color: #80A0C2;">)</span>
@@ -746,88 +758,131 @@ FizzBuzz
 "color: #B58DAE; font-weight: bold;">4006</span><span style=
 "color: #80A0C2;">)</span>
 </pre>
-    </div>
-    <p>If you get stuck, follow the instructions in <a href=
-    "https://joaotavora.github.io/sly/#Setting-up-the-Lisp-image">the
-    SLY manual</a>, but I think Quicklisp makes this process a bit
-    easier.</p>
-    <p>Now fire up a new terminal and get your VM’s ip address. On
-    Debian, the command is</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">ip a
+        </div>
+        <p>If you get stuck, follow the instructions in <a href=
+        "https://joaotavora.github.io/sly/#Setting-up-the-Lisp-image">
+        the SLY manual</a>, but I think Quicklisp makes this
+        process a bit easier.</p>
+        <p>Now fire up a new terminal and get your VM’s ip address.
+        On Debian, the command is</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">hostname -I
 </pre>
-    </div>
-    <p>After that, SSH into your VM from your <i>host</i> machine
-    to create an SSH tunnel that we’ll take advantage of later.</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">
-      ssh -L4006:localhost:4006 &lt;username&gt;@&lt;ip-address&gt;
+        </div>
+        <p>After that, SSH into your VM from your <i>host</i>
+        machine to create an SSH tunnel that we’ll take advantage
+        of later.</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">
+          ssh -L4006:localhost:4006 &lt;username&gt;@&lt;ip-address&gt;
 </pre>
-    </div>
-    <p>Change <code>4006</code> to the port that <code>slynk</code>
-    is using to run your Lisp server, and change the
-    <code>&lt;username&gt;</code> and
-    <code>&lt;ip-address&gt;</code> fields. Remember to run this
-    command from your host machine, not the VM.</p>
-    <p>Once your SSH tunnel is set up, follow the instructions in
-    section 8.1.3 of the SLY manual (linked above) to configure
-    Emacs to translate filenames between the remote and host
-    machines. Make sure you have TRAMP installed and working in
-    Emacs. Now you can connect to your VM from your host machine’s
-    Emacs using TRAMP. <code>C-x C-f
-    /ssh:&lt;username&gt;@&lt;ip-address&gt;</code> should do the
-    trick. Now you can navigate to the <code>cl-ptrace</code>
-    repo.</p>
-    <p>The setup is pretty much over: now we can start hacking.
-    Compile the <code>spam.c</code> file in the
-    <code>cl-ptrace</code> repo on your VM into the executable
-    <code>spam</code> and run it.</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">gcc spam.c -o spam
+        </div>
+        <p>Change <code>4006</code> to the port that
+        <code>slynk</code> is using to run your Lisp server, and
+        change the <code>&lt;username&gt;</code> and
+        <code>&lt;ip-address&gt;</code> fields. Remember to run
+        this command from your host machine, not the VM.</p>
+        <p>Once your SSH tunnel is set up, follow the instructions
+        in section 8.1.3 of the SLY manual (linked above) to
+        configure Emacs to translate filenames between the remote
+        and host machines. Make sure you have TRAMP installed and
+        working in Emacs. Now you can connect to your VM from your
+        host machine’s Emacs using TRAMP. <code>C-x C-f
+        /ssh:&lt;username&gt;@&lt;ip-address&gt;</code> should do
+        the trick. Now you can navigate to the
+        <code>cl-ptrace</code> repo.</p>
+        <p>The setup is pretty much over: now we can start hacking.
+        Compile the <code>spam.c</code> file in the
+        <code>cl-ptrace</code> repo on your VM into the executable
+        <code>spam</code> and run it.</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">gcc spam.c -o spam
 ./spam
 </pre>
-    </div>
-    <p>We want to get the process id (<code>pid</code>) of this
-    <code>spam</code> program so we can interact with it. To do
-    this, run the command</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">ps -a | <span style=
-      "color: #ECCC87;">grep</span> spam | awk <span style=
-      "color: #A2BF8A;">'{ print $1 }'</span>
+        </div>
+        <p>We want to get the process id (<code>pid</code>) of this
+        <code>spam</code> program so we can interact with it. To do
+        this, run the command</p>
+        <div class="org-src-container">
+          <pre class="src src-sh" id="org0d18523">
+          ps -a | <span style=
+"color: #ECCC87;">grep</span> spam | awk <span style=
+"color: #A2BF8A;">'{ print $1 }'</span>
 </pre>
-    </div>
-    <p>We can then display information about the process with
-    <code>top</code>.</p>
-    <div class="org-src-container">
-      <pre class="src src-sh">top -p &lt;pid&gt;
+        </div>
+        <pre class="example">
+1543
 </pre>
+        <p>We can then display information about the process with
+        <code>top</code>. You can get a nicer output by using the
+        <code>htop</code> program.</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">top -p $<span style=
+          "color: #dac6d6;">PID</span>
+</pre>
+        </div>
+        <p>We can even limit the output of <code>top</code> to just
+        get the CPU usage. The <code>sed</code> commands are just
+        for making the output nicer.</p>
+        <div class="org-src-container">
+          <pre class="src src-sh">top -p $<span style=
+          "color: #dac6d6;">PID</span> -n <span style=
+          "color: #B58DAE; font-weight: bold;">2</span> -b | <span style=
+          "color: #ECCC87;">grep</span> Cpu | sed <span style=
+          "color: #A2BF8A;">'s/\:/\: /'</span> | sed <span style=
+          "color: #A2BF8A;">'s/us,.*/ /'</span>
+</pre>
+        </div>
+        <table>
+          <colgroup>
+            <col class="org-left">
+            <col class="org-right">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="org-left">%Cpu(s):</td>
+              <td class="org-right">68.7</td>
+            </tr>
+            <tr>
+              <td class="org-left">%Cpu(s):</td>
+              <td class="org-right">99.7</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Notice that the <code>spam</code> program is taking up
+        over 90% of the CPU since it’s an infinite
+        <code>while</code> loop in a single-threaded process.</p>
+      </div>
     </div>
-    <p>Notice that the <code>spam</code> program is taking up over
-    90% of the CPU since it’s an infinite <code>while</code> loop
-    in a single-threaded process. You can get a nicer output by
-    using the <code>htop</code> program.</p>
-    <p>Next, switch back to Emacs (on the host machine) and make
-    sure you’re in the <code>cl-ptrace</code> repo. We want to
-    connect to the remote Lisp server from Emacs, so run the
-    command <code>M-x sly-connect</code> keep the default host as
-    <code>localhost</code> and change the port to the
-    <code>slynk</code> server port. Now you have a local Lisp REPL
-    that is connected to your VM via the SSH tunnel we created
-    earlier. Load the file <code>cl-ptrace.asd</code> with the
-    command <code>M-x sly-load-file</code>. The file is on the
-    remote VM, but this isn’t a problem because TRAMP should be
-    configured to handle the remote filenames (we did this
-    earlier). This should load the file into the <code>sly</code>
-    REPL. Then run <code>(asdf:load-system "cl-ptrace")</code> to
-    load the <code>cl-ptrace</code> library into the REPL, and run
-    <code>(in-package :cl-ptrace)</code> to start using the
-    library.</p>
-    <p>Make sure that you’re root by running the function
-    <code>(am-i-root?)</code>. It should return <code>T</code>. Now
-    you’ve successfully created a mechanism to hack remote
-    processes from your local machine using Common Lisp and Emacs.
-    Go ahead and follow along with the rest of Kaiste’s
-    videos—they’re amazing.</p>
+    <div id="outline-container-org01037b7" class="outline-2">
+      <h2 id="org01037b7">Hacking in Emacs</h2>
+      <div class="outline-text-2" id="text-org01037b7">
+        <p>Next, switch back to Emacs (on the host machine) and
+        make sure you’re in the remote <code>cl-ptrace</code> repo
+        via TRAMP. We want to connect to the remote Lisp server
+        from Emacs, so run the command <code>M-x
+        sly-connect</code>, keep the default host as
+        <code>localhost</code>, and change the port to the
+        <code>slynk</code> server port.</p>
+        <p>Now you have a local Lisp REPL that is connected to your
+        VM via the SSH tunnel we created earlier. Load the file
+        <code>cl-ptrace.asd</code> with the command <code>M-x
+        sly-load-file</code>. The file is on the remote VM, but
+        this isn’t a problem because TRAMP should be configured to
+        handle the remote filenames (we did this earlier). This
+        should load the file into the <code>sly</code> REPL. Then
+        run <code>(asdf:load-system "cl-ptrace")</code> to load the
+        <code>cl-ptrace</code> library into the REPL, and run
+        <code>(in-package :cl-ptrace)</code> to start using the
+        library.</p>
+        <p>Make sure that you’re root by running the function
+        <code>(am-i-root?)</code>. It should return <code>T</code>.
+        Now you’ve successfully created a mechanism to hack remote
+        processes from your local machine using Common Lisp and
+        Emacs. Go ahead and follow along with the rest of Kaiste’s
+        videos—they’re amazing.</p>
+      </div>
+    </div>
     <div class="taglist">
       <a href=
       "https://samarthkishor.github.io/blog/tags.html">Tags</a>:
@@ -851,9 +906,9 @@ FizzBuzz
     style using a REPL. However, OCaml will never be quite as
     flexible and interactive as something like Lisp because of its
     greatest feature: the strong static type system.</p>
-    <div id="outline-container-org35a3e91" class="outline-2">
-      <h2 id="org35a3e91">Testing functions using the REPL</h2>
-      <div class="outline-text-2" id="text-org35a3e91">
+    <div id="outline-container-orgc9abdcc" class="outline-2">
+      <h2 id="orgc9abdcc">Testing functions using the REPL</h2>
+      <div class="outline-text-2" id="text-orgc9abdcc">
         <p>One of the nicest features of OCaml is that is has both
         a byte-code compiler (<code>ocamlc</code>) and a
         native-code compiler (<code>ocamlopt</code>). This means
@@ -867,9 +922,9 @@ FizzBuzz
         use this technique that is usually unique to Lisps and
         interpreted languages.</p>
       </div>
-      <div id="outline-container-org62c42bf" class="outline-3">
-        <h3 id="org62c42bf">Sending code to the REPL in Emacs</h3>
-        <div class="outline-text-3" id="text-org62c42bf">
+      <div id="outline-container-orgffdd2a5" class="outline-3">
+        <h3 id="orgffdd2a5">Sending code to the REPL in Emacs</h3>
+        <div class="outline-text-3" id="text-orgffdd2a5">
           <p>I’ll describe the process for interactive development
           using Emacs which is my text editor of choice. Similar
           techniques should exist for other editors such as VS Code
@@ -942,10 +997,10 @@ FizzBuzz
           edit the code, and send it back to <code>utop</code>.</p>
         </div>
       </div>
-      <div id="outline-container-org0b9cdae" class="outline-3">
-        <h3 id="org0b9cdae">Working with multiple files in the
+      <div id="outline-container-org59e2d3d" class="outline-3">
+        <h3 id="org59e2d3d">Working with multiple files in the
         REPL</h3>
-        <div class="outline-text-3" id="text-org0b9cdae">
+        <div class="outline-text-3" id="text-org59e2d3d">
           <p>The technique I described above works great within a
           single file, but things get complicated once you send
           code from multiple files to the same <code>utop</code>
@@ -1022,9 +1077,9 @@ Error: Unbound module Test
         </div>
       </div>
     </div>
-    <div id="outline-container-org029e875" class="outline-2">
-      <h2 id="org029e875">Pretty-printing</h2>
-      <div class="outline-text-2" id="text-org029e875">
+    <div id="outline-container-org5ff0129" class="outline-2">
+      <h2 id="org5ff0129">Pretty-printing</h2>
+      <div class="outline-text-2" id="text-org5ff0129">
         <p>A major part of interactive development is seeing the
         results of functions in the REPL. Since OCaml has a strong
         type system without dynamic dispatch, you can only print
@@ -1138,9 +1193,9 @@ Error: Unbound module Test
         static type systems.</p>
       </div>
     </div>
-    <div id="outline-container-org6289301" class="outline-2">
-      <h2 id="org6289301">Tracing function execution</h2>
-      <div class="outline-text-2" id="text-org6289301">
+    <div id="outline-container-org6abc4bc" class="outline-2">
+      <h2 id="org6abc4bc">Tracing function execution</h2>
+      <div class="outline-text-2" id="text-org6abc4bc">
         <p>Say you want to now debug the <code>resolve</code>
         function in your <code>Resolver</code> module, but the
         return value of <code>resolve</code> is of type

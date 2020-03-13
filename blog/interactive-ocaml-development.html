@@ -39,9 +39,9 @@
     style using a REPL. However, OCaml will never be quite as
     flexible and interactive as something like Lisp because of its
     greatest feature: the strong static type system.</p>
-    <div id="outline-container-org35a3e91" class="outline-2">
-      <h2 id="org35a3e91">Testing functions using the REPL</h2>
-      <div class="outline-text-2" id="text-org35a3e91">
+    <div id="outline-container-orgc9abdcc" class="outline-2">
+      <h2 id="orgc9abdcc">Testing functions using the REPL</h2>
+      <div class="outline-text-2" id="text-orgc9abdcc">
         <p>One of the nicest features of OCaml is that is has both
         a byte-code compiler (<code>ocamlc</code>) and a
         native-code compiler (<code>ocamlopt</code>). This means
@@ -55,9 +55,9 @@
         use this technique that is usually unique to Lisps and
         interpreted languages.</p>
       </div>
-      <div id="outline-container-org62c42bf" class="outline-3">
-        <h3 id="org62c42bf">Sending code to the REPL in Emacs</h3>
-        <div class="outline-text-3" id="text-org62c42bf">
+      <div id="outline-container-orgffdd2a5" class="outline-3">
+        <h3 id="orgffdd2a5">Sending code to the REPL in Emacs</h3>
+        <div class="outline-text-3" id="text-orgffdd2a5">
           <p>I’ll describe the process for interactive development
           using Emacs which is my text editor of choice. Similar
           techniques should exist for other editors such as VS Code
@@ -130,10 +130,10 @@
           edit the code, and send it back to <code>utop</code>.</p>
         </div>
       </div>
-      <div id="outline-container-org0b9cdae" class="outline-3">
-        <h3 id="org0b9cdae">Working with multiple files in the
+      <div id="outline-container-org59e2d3d" class="outline-3">
+        <h3 id="org59e2d3d">Working with multiple files in the
         REPL</h3>
-        <div class="outline-text-3" id="text-org0b9cdae">
+        <div class="outline-text-3" id="text-org59e2d3d">
           <p>The technique I described above works great within a
           single file, but things get complicated once you send
           code from multiple files to the same <code>utop</code>
@@ -210,9 +210,9 @@ Error: Unbound module Test
         </div>
       </div>
     </div>
-    <div id="outline-container-org029e875" class="outline-2">
-      <h2 id="org029e875">Pretty-printing</h2>
-      <div class="outline-text-2" id="text-org029e875">
+    <div id="outline-container-org5ff0129" class="outline-2">
+      <h2 id="org5ff0129">Pretty-printing</h2>
+      <div class="outline-text-2" id="text-org5ff0129">
         <p>A major part of interactive development is seeing the
         results of functions in the REPL. Since OCaml has a strong
         type system without dynamic dispatch, you can only print
@@ -326,9 +326,9 @@ Error: Unbound module Test
         static type systems.</p>
       </div>
     </div>
-    <div id="outline-container-org6289301" class="outline-2">
-      <h2 id="org6289301">Tracing function execution</h2>
-      <div class="outline-text-2" id="text-org6289301">
+    <div id="outline-container-org6abc4bc" class="outline-2">
+      <h2 id="org6abc4bc">Tracing function execution</h2>
+      <div class="outline-text-2" id="text-org6abc4bc">
         <p>Say you want to now debug the <code>resolve</code>
         function in your <code>Resolver</code> module, but the
         return value of <code>resolve</code> is of type
