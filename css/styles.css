@@ -189,38 +189,8 @@ p.description {
   }
 }
 
-.copyright p {
-  margin: 0;
-  font-size: 1.2em;
-  color: #3b4252;
-}
-
 .top {
   text-align: center;
-}
-.social {
-  text-align: right;
-}
-
-.social ul {
-  margin: 5px 0 0 0;
-  padding: 0;
-}
-
-.social li {
-  display: inline-block;
-  font-size: 1.25em;
-  list-style: none;
-}
-
-.social a {
-  display: block;
-  color: #3b4252;
-  padding: 10px;
-}
-
-.social a:hover {
-  color: #5e81ac;
 }
 
 #experience-timeline {
@@ -505,58 +475,59 @@ p.description {
   margin: 0;
 }
 
-.page-footer {
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #d8dee9;
+  font-size: 1.2em;
+  height: 2em;
 }
 
-div.row {
+footer .copyright {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
+  padding-left: 1em;
+  justify-content: flex-start;
 }
 
-ul.social-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  list-style: none;
+footer .copyright p {
   margin: 0;
-  padding: 0;
-  height: auto;
-  width: auto;
+  font-size: 1em;
+  color: #3b4252;
 }
 
-ul.social-row li {
-  display: -webkit-box;
-  display: -ms-flexbox;
+footer .social {
+  margin: 0;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
+  justify-content: flex-end;
+  padding: 0px;
+  text-align: right;
 }
 
-a.social-icon {
-  font-size: 2em;
-  line-height: 1.2em;
-  padding: 10px;
+footer .social ul {
+  display: flex;
+  padding: 0;
 }
 
-a.social-icon:hover,
-a.social-icon:focus {
+footer .social li {
+  display: inline;
+  padding: 0.5em;
+}
+
+footer .social li a {
+  font-size: 1em;
+  text-decoration: none;
+  color: #3b4252;
+}
+
+footer .social a:hover {
+  color: #5e81ac;
+}
+
+footer a.social-icon:hover,
+footer a.social-icon:focus {
   color: #88c0d0;
 }
 
@@ -669,11 +640,13 @@ a.social-icon:focus {
   }
 
   footer {
-    text-align: center;
+    flex-direction: column;
+    font-size: 1.2em;
+    height: auto;
   }
 
-  .social {
-    text-align: center;
+  footer .copyright {
+    padding-left: 0;
   }
 }
 
