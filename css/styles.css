@@ -640,6 +640,7 @@ footer a.social-icon:focus {
   }
 
   footer {
+    padding-top: 1em;
     flex-direction: column;
     font-size: 1.2em;
     height: auto;
@@ -651,6 +652,10 @@ footer a.social-icon:focus {
 }
 
 @media only screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
   #lead-content h1 {
     font-size: 1.5em;
   }
@@ -662,6 +667,10 @@ footer a.social-icon:focus {
   #lead-content a {
     font-size: 0.9em;
     padding: 5px 10px;
+  }
+
+  footer {
+    font-size: 14px;
   }
 }
 * {
