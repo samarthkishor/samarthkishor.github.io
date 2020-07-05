@@ -2,58 +2,58 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Samarth&#39;s Blog</title>
-    <link>http://example.org/tags/</link>
+    <link>https://samarthkishor.github.io/tags/</link>
     <description>Recent content in Tags on Samarth&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
     <lastBuildDate>Wed, 11 Mar 2020 22:49:00 -0400</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://samarthkishor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>lisp</title>
-      <link>http://example.org/tags/lisp/</link>
+      <link>https://samarthkishor.github.io/tags/lisp/</link>
       <pubDate>Wed, 11 Mar 2020 22:49:00 -0400</pubDate>
       
-      <guid>http://example.org/tags/lisp/</guid>
+      <guid>https://samarthkishor.github.io/tags/lisp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OCaml</title>
-      <link>http://example.org/tags/ocaml/</link>
+      <link>https://samarthkishor.github.io/tags/ocaml/</link>
       <pubDate>Wed, 11 Mar 2020 22:49:00 -0400</pubDate>
       
-      <guid>http://example.org/tags/ocaml/</guid>
+      <guid>https://samarthkishor.github.io/tags/ocaml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>http://example.org/tags/programming/</link>
+      <link>https://samarthkishor.github.io/tags/programming/</link>
       <pubDate>Wed, 11 Mar 2020 22:49:00 -0400</pubDate>
       
-      <guid>http://example.org/tags/programming/</guid>
+      <guid>https://samarthkishor.github.io/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>python</title>
-      <link>http://example.org/tags/python/</link>
+      <link>https://samarthkishor.github.io/tags/python/</link>
       <pubDate>Wed, 11 Mar 2020 22:49:00 -0400</pubDate>
       
-      <guid>http://example.org/tags/python/</guid>
+      <guid>https://samarthkishor.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>http://example.org/tags/linux/</link>
+      <link>https://samarthkishor.github.io/tags/linux/</link>
       <pubDate>Mon, 09 Mar 2020 22:10:00 -0400</pubDate>
       
-      <guid>http://example.org/tags/linux/</guid>
+      <guid>https://samarthkishor.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
