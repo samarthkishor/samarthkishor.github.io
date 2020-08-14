@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 22:49:00 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 13 Aug 2020 13:35:00 -0400</lastBuildDate>
     
 	<atom:link href="https://samarthkishor.github.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Typed APIs in Python with dataclasses and NamedTuples</title>
+      <link>https://samarthkishor.github.io/posts/typed_apis_in_python/</link>
+      <pubDate>Thu, 13 Aug 2020 13:35:00 -0400</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/typed_apis_in_python/</guid>
+      <description>Why would Python programmers ever care about types? While Python doesn&amp;rsquo;t check any types statically (before running the program), it does perform extensive run-time type checking. Checking types at run-time without any implicit casts makes the language strongly-typed and dynamically-typed, as opposed to a language like C which is weakly-typed and statically-typed. This is an important distinction, but I won&amp;rsquo;t go over the differences between strong and weak typing in this post.</description>
+    </item>
     
     <item>
       <title>Three Completely Different Approaches to the FizzBuzz Problem</title>
