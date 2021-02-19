@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Thu, 11 Feb 2021 20:48:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://samarthkishor.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +15,11 @@
     <item>
       <title>The Role of Open Source in Innovation and Product Development</title>
       <link>https://samarthkishor.github.io/posts/open_source_innovation_product_development/</link>
-      <pubDate>Thu, 11 Feb 2021 20:48:00 +0000</pubDate>
+      <pubDate>Thu, 11 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://samarthkishor.github.io/posts/open_source_innovation_product_development/</guid>
       <description>This is my first blog post for the UVA class LPPS 4720.
-To understand the advantages of Open Source when applied to innovation and product development, it is important to first understand IP. According to the World Intellectual Property Organization, &amp;ldquo;Intellectual property (IP) refers to creations of the mind, such as inventions; literary and artistic works; designs; and symbols, names and images used in commerce.&amp;rdquo; The primary purpose of Intellectual Property is to encourage innovation by providing financial incentives and/or competitive advantages to those who create new products or ideas&amp;mdash;this is done via Copyright, Patents, Trademarks, Trade Secrets, etc.</description>
+While Intellectual Property (IP) has been a useful tool in the past to foster entrepreneurship, it has many underlying issues. An Open Source philosophy is a great alternative to IP which solves many of its issues, but still is not a silver bullet. To understand the advantages of Open Source when applied to innovation and product development, it is important to first understand IP.</description>
     </item>
     
     <item>
