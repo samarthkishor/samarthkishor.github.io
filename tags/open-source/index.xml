@@ -7,10 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Fri, 26 Feb 2021 23:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://samarthkishor.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 11 Mar 2021 22:42:00 -0500</lastBuildDate><atom:link href="https://samarthkishor.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Role of Open Source in Energy</title>
+      <link>https://samarthkishor.github.io/posts/open_source_energy/</link>
+      <pubDate>Thu, 11 Mar 2021 22:42:00 -0500</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/open_source_energy/</guid>
+      <description>This is my third blog post for the UVA class LPPS 4720.
+The purpose of this assignment probably was to discuss how the Open Source movement will impact renewable energy, but I&amp;rsquo;m going to take this in a different direction and talk about computer chips. RISC-V is the first completely free and open CPU instruction set architecture (ISA) primarily for low-energy computers. According to its website, &amp;ldquo;the RISC-V ISA delivers a new level of free, extensible software and hardware freedom on architecture, paving the way for the next 50 years of computing design and innovation&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>The Role of Open Source in Addressing Inequality</title>

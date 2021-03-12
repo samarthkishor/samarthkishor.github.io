@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Mon, 09 Mar 2020 22:10:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://samarthkishor.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2020 22:10:00 -0400</lastBuildDate><atom:link href="https://samarthkishor.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remote Linux Process Hacking through SSH</title>
       <link>https://samarthkishor.github.io/posts/remote_process_hacking/</link>
