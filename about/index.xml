@@ -6,6 +6,10 @@
     <description>Recent content on Samarth&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&amp;copy; Samarth Kishor 2020</copyright><atom:link href="https://samarthkishor.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&amp;copy; Samarth Kishor 2020</copyright>
+    
+	<atom:link href="https://samarthkishor.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>
