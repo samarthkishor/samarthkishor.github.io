@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Tue, 16 Mar 2021 23:50:00 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 24 Mar 2021 18:02:00 -0400</lastBuildDate>
     
 	<atom:link href="https://samarthkishor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Role of Open Source in Agriculture</title>
+      <link>https://samarthkishor.github.io/posts/open_source_agriculture/</link>
+      <pubDate>Wed, 24 Mar 2021 18:02:00 -0400</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/open_source_agriculture/</guid>
+      <description>This is my fifth blog post for the UVA class LPPS 4720.
+When you think of farming, you probably picture massive fields with acres of land and tons of heavy equipment. However, not all food needs to be grown this way&amp;mdash;individuals can empower themselves to manage their own small-scale farming operations. Unlike companies such as Vision Robotics and Naio Technologies that develop and sell proprietary farming robots, FarmBot is a company completely built upon open-source principles&amp;mdash;they sell products, but everything, including the building instructions for the robots and the software that they run on, is fully open-source.</description>
+    </item>
     
     <item>
       <title>The Role of Open Source in Education</title>
