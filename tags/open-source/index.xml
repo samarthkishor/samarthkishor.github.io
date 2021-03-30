@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Wed, 24 Mar 2021 18:02:00 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 30 Mar 2021 16:25:00 -0400</lastBuildDate>
     
 	<atom:link href="https://samarthkishor.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Role of Open Source in Communication</title>
+      <link>https://samarthkishor.github.io/posts/open_source_communication/</link>
+      <pubDate>Tue, 30 Mar 2021 16:25:00 -0400</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/open_source_communication/</guid>
+      <description>This is my sixth blog post for the UVA class LPPS 4720.
+In this post I&amp;rsquo;m going to get a bit meta and talk about open-source blogs on my open-source blog on open-source. For someone who wants to start writing online, there are really two options&amp;mdash;use some sort of centralized publishing platform like Medium or go the decentralized route and build and host the website yourself (or use a service like GitHub Pages to host the site for you).</description>
+    </item>
     
     <item>
       <title>The Role of Open Source in Agriculture</title>
