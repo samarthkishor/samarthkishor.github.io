@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Tue, 30 Mar 2021 16:25:00 -0400</lastBuildDate><atom:link href="https://samarthkishor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Apr 2021 17:36:00 -0400</lastBuildDate><atom:link href="https://samarthkishor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Role of Open Source in Infrastructure</title>
+      <link>https://samarthkishor.github.io/posts/open_source_infrastructure/</link>
+      <pubDate>Mon, 05 Apr 2021 17:36:00 -0400</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/open_source_infrastructure/</guid>
+      <description>This is my seventh blog post for the UVA class LPPS 4720.
+There are two major types of infrastructure that power the Internet: decentralized and centralized. While open-source software can live on both centralized and decentralized infrastructure, I believe that the future of the Web will rely on distributed computing over a decentralized network of computers. Open-source is key to making this work effectively.
+As I mentioned in my previous post Tim Berners-Lee envisioned the World Wide Web as a primarily decentralized platform.</description>
+    </item>
+    
     <item>
       <title>The Role of Open Source in Communication</title>
       <link>https://samarthkishor.github.io/posts/open_source_communication/</link>
