@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 22:49:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://samarthkishor.github.io/tags/ocaml/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 11 Mar 2020 22:49:00 -0400</lastBuildDate><atom:link href="https://samarthkishor.github.io/tags/ocaml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Three Completely Different Approaches to the FizzBuzz Problem</title>
       <link>https://samarthkishor.github.io/posts/fizzbuzz_approaches/</link>
