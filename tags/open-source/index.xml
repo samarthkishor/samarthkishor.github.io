@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Samarth Kishor 2020</copyright>
-    <lastBuildDate>Mon, 05 Apr 2021 17:36:00 -0400</lastBuildDate><atom:link href="https://samarthkishor.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 23:34:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://samarthkishor.github.io/tags/open-source/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Role of Open Source in Health</title>
+      <link>https://samarthkishor.github.io/posts/open_source_health/</link>
+      <pubDate>Sun, 25 Apr 2021 23:34:00 -0400</pubDate>
+      
+      <guid>https://samarthkishor.github.io/posts/open_source_health/</guid>
+      <description>This is my eighth blog post for the UVA class LPPS 4720.
+Academic research is critical for the advancement of medical science, yet many of the most prestigious journals are locked behind insurmountable paywalls. Open Access (OA) journals seek to combat this by bringing the principles of open-source to academia&amp;mdash;they are completely free and open to the public so that anyone with an Internet connection can access quality medical research. OA also limits many copyright and licensing restrictions, similar to the spirit of Creative Commons licenses, so that the health community can freely build upon each other&amp;rsquo;s work.</description>
+    </item>
+    
     <item>
       <title>The Role of Open Source in Infrastructure</title>
       <link>https://samarthkishor.github.io/posts/open_source_infrastructure/</link>
